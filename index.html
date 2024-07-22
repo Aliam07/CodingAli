@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Password Generator</h2>
+        <p>Need a secure password?</p>
+        <p>Generate secure passwords privately!</p>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="uppercase"> Uppercase</label>
+            <label><input type="checkbox" id="lowercase"> Lowercase</label>
+            <label><input type="checkbox" id="numbers"> Numbers</label>
+            <label><input type="checkbox" id="symbols"> Symbols</label>
+        </div>
+        <div class="password-length">
+            <label>Password Length:</label>
+            <div class="slider-container">
+                <span id="length-display">12</span>
+                <input type="range" id="password-length" min="8" max="32" value="12" oninput="document.getElementById('length-display').innerText = this.value;">
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="generatePassword()">Generate</button>
+            <button onclick="generatePassword()">Regenerate</button>
+            <button id="copy-clip" style="display: none;" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+        <div class="generated-password-display">
+            <p id="generated-password"></p>
+        </div>
+        <div class="support">
+            <p>We do not log passwords!</p>
+            <p>Powered by Students</p>
+        </div>
+        <div class="buttons">
+            <button>FAQ</button>
+            <button>Support</button>
+        </div>
+    </div>
+</body>
+</html>
